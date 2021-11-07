@@ -8,12 +8,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/doctors", doctors);
-
-app.use(express.static(path.join(__dirname, "/client/build")));
-app.get('*', (req, res)=>{
-  res.sendFile(this.path.join(__dirname, '/client/build', 'index.html'))
-});
-
 app.listen(port, function() {
   console.log("Runnning on " + port);
 });
